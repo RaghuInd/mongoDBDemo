@@ -1,5 +1,7 @@
 package com.employee.demo;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,5 +39,13 @@ public class EmployeeController {
 		
 		this.employeeRepo.deleteById(id);
 		return emp;
+	}
+	@GetMapping("active/employees")
+	public List<Employee> getAllActiveEmployees(){
+		return this.employeeRepo.findByActiveTrue();
+	}
+	@GetMapping("inactive/employees")
+	public List<Employee> getAllInActiveEmployees(){
+		return this.employeeRepo.findByActiveFalse();
 	}
 }

@@ -25,13 +25,15 @@ public class Employee {
 	//@Min(value = 0,message = "Salary must be greater than 0.")	
 	private Double salary;
 	// employee has depencdency on Address
+	private Boolean active;	
 	
-	
-	//private Address address;
+	private Address address;
 	
 	
 	
 	//private Department department;
+	
+
 	
 	public Employee() {
 		super();
@@ -44,6 +46,13 @@ public class Employee {
 	}
 	
 	
+public Employee(String id, String name, Double salary, Boolean active) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.salary = salary;
+		this.active = active;
+	}
 //	public Employee(Integer id, String name, Double salary, Address address, Department department) {
 //		super();
 //		this.id = id;
@@ -59,8 +68,15 @@ public class Employee {
 //	public void setDepartment(Department department) {
 //		this.department = department;
 //	}
+
 	public String getId() {
 		return id;
+	}
+	public Boolean getActive() {
+		return active;
+	}
+	public void setActive(Boolean active) {
+		this.active = active;
 	}
 	public void setId(String id) {
 		this.id = id;
@@ -77,12 +93,13 @@ public class Employee {
 	public void setSalary(Double salary) {
 		this.salary = salary;
 	}
-//	public Address getAddress() {
-//		return address;
-//	}
-//	public void setAddress(Address address) {
-//		this.address = address;
-//	}
+	
+	public Address getAddress() {
+	return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 	
 	
 }
